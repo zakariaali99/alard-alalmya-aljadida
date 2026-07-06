@@ -7,8 +7,10 @@
   <meta name="description" data-i18n="page-desc" data-en="Al-Ard Al-Alamiya Al-Jadida - Global leader in food import and export: pulses, nuts, canned goods, and livestock. Quality from Misrata to the world." content="شركة الأرض العالمية الجديدة - رائدة في استيراد وتصدير المواد الغذائية: البقوليات، المكسرات، المعلبات، والمواشي. جودة عالمية من مصراتة إلى العالم.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#00236F">
 
   <!-- Google Fonts: Tajawal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,7 +77,7 @@
     :root {
       --bg-page: #FDFBF7;
       --bg-surface: #ffffff;
-      --bg-surface-low: #F1F4F9;
+      --bg-surface-low: #F4F6FA;
       --bg-surface-high: #E8ECF3;
       --text-primary: #181C20;
       --text-soft: #444651;
@@ -84,21 +86,19 @@
       --border-light: rgba(0, 35, 111, 0.08);
       --shadow-color: rgba(0, 35, 111, 0.04);
       --shadow-hover: rgba(0, 35, 111, 0.08);
-      --overlay-gradient: rgba(0, 0, 0, 0.04);
     }
     html.dark {
-      --bg-page: #0a1025;
-      --bg-surface: #111827;
-      --bg-surface-low: #1a2240;
-      --bg-surface-high: #1e2a4a;
-      --text-primary: #f1f5f9;
-      --text-soft: #94a3b8;
-      --text-muted: #64748b;
-      --border: rgba(255, 255, 255, 0.12);
-      --border-light: rgba(255, 255, 255, 0.05);
-      --shadow-color: rgba(0, 0, 0, 0.3);
-      --shadow-hover: rgba(0, 0, 0, 0.5);
-      --overlay-gradient: rgba(0, 0, 0, 0.3);
+      --bg-page: #0f172a;
+      --bg-surface: #1e293b;
+      --bg-surface-low: #334155;
+      --bg-surface-high: #475569;
+      --text-primary: #f8fafc;
+      --text-soft: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(255, 255, 255, 0.04);
+      --shadow-color: rgba(0, 0, 0, 0.4);
+      --shadow-hover: rgba(0, 0, 0, 0.6);
     }
 
     body {
@@ -120,16 +120,36 @@
       transform: scaleX(-1);
     }
 
-    /* Mobile menu */
+    /* Mobile sidebar */
     #mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, opacity 0.25s ease;
-      opacity: 0;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 300px;
+      max-width: 85vw;
+      z-index: 50;
+      background: var(--bg-surface);
+      box-shadow: -8px 0 32px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease-in-out;
+      overflow-y: auto;
     }
-    #menu-toggle:checked ~ #mobile-menu {
-      max-height: 420px;
+    [dir="rtl"] #mobile-menu { right: 0; transform: translateX(100%); }
+    [dir="ltr"] #mobile-menu { left: 0; transform: translateX(-100%); }
+    #menu-toggle:checked ~ #mobile-menu { transform: translateX(0); }
+
+    /* Sidebar backdrop */
+    .sidebar-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 49;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    #menu-toggle:checked ~ .sidebar-backdrop {
       opacity: 1;
+      pointer-events: auto;
     }
 
     /* Animations */
@@ -215,8 +235,8 @@
           <a href="#home" class="flex items-center gap-2 sm:gap-3" aria-label="الصفحة الرئيسية" data-i18n-aria="nav-home-aria" data-en="Home page">
             <img src="assets/img/logo.png" alt="شركة الأرض العالمية الجديدة Logo" class="h-9 sm:h-11 w-auto object-contain" data-i18n-alt="nav-logo-alt" data-en="Al-Ard Al-Alamiya Al-Jadida Logo">
             <span class="text-headline-md font-tajawal font-bold text-primary select-none">
-              <span class="hidden md:inline" data-i18n="nav-brand" data-en="Al-Ard Al-Alamiya Al-Jadida">شركة الأرض العالمية الجديدة</span>
-              <span class="md:hidden" data-i18n="nav-brand-short" data-en="Al-Ard Al-Alamiya">الأرض العالمية</span>
+              <span class="hidden md:inline text-[18px] lg:text-headline-md" data-i18n="nav-brand" data-en="Al-Ard Al-Alamiya Al-Jadida">شركة الأرض العالمية الجديدة</span>
+              <span class="md:hidden text-[13px] sm:text-[15px] leading-tight" data-i18n="nav-brand" data-en="Al-Ard Al-Alamiya Al-Jadida">شركة الأرض العالمية الجديدة</span>
             </span>
           </a>
         </div>
@@ -248,21 +268,40 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden border-t [border-color:var(--border)]">
-      <div class="max-w-container-max mx-auto px-4 sm:px-gutter">
-        <ul class="flex flex-col gap-1 py-4">
-          <li><a href="#home" onclick="document.getElementById('menu-toggle').checked=false" class="block px-2 py-2.5 text-label-md font-tajawal font-bold text-primary rounded-lg hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-home" data-en="Home">الرئيسية</a></li>
-          <li><a href="#about" onclick="document.getElementById('menu-toggle').checked=false" class="block px-2 py-2.5 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-lg hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-about" data-en="About Us">من نحن</a></li>
-          <li><a href="#products" onclick="document.getElementById('menu-toggle').checked=false" class="block px-2 py-2.5 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-lg hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-products" data-en="Products">منتجاتنا</a></li>
-          <li><a href="#contact" onclick="document.getElementById('menu-toggle').checked=false" class="block px-2 py-2.5 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-lg hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-contact" data-en="Contact Us">اتصل بنا</a></li>
-          <li class="border-t [border-color:var(--border)] pt-3 mt-1 flex items-center gap-3">
-            <button onclick="toggleLang()" class="flex-1 text-center px-2 py-2.5 text-label-md font-tajawal font-medium text-primary" data-i18n="lang-btn" data-en="العربية">English</button>
-            <button onclick="toggleDark()" class="flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:[background:var(--bg-surface-low)] transition-colors" aria-label="التبديل بين الوضع الليلي والنهاري" data-i18n-aria="dark-aria" data-en="Toggle dark/light mode">
-              <span class="material-symbols-outlined text-2xl">dark_mode</span>
-            </button>
-          </li>
-        </ul>
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-backdrop md:hidden"></div>
+    <div id="mobile-menu" class="md:hidden flex flex-col">
+      <div class="flex items-center justify-between px-5 h-16 border-b [border-color:var(--border)] shrink-0">
+        <span class="text-headline-md font-tajawal font-bold text-primary" data-i18n="nav-menu-title" data-en="Menu">القائمة</span>
+        <label for="menu-toggle" class="cursor-pointer flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:[background:var(--bg-surface-low)] transition-colors" aria-label="إغلاق القائمة" data-i18n-aria="close-menu-aria" data-en="Close menu">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </label>
+      </div>
+      <ul class="flex flex-col gap-1 p-4 flex-1">
+        <li><a href="#home" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-bold text-primary rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-home" data-en="Home">
+          <span class="material-symbols-outlined text-lg text-gold">home</span>
+          <span>الرئيسية</span>
+        </a></li>
+        <li><a href="#about" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-about" data-en="About Us">
+          <span class="material-symbols-outlined text-lg text-gold">info</span>
+          <span>من نحن</span>
+        </a></li>
+        <li><a href="#products" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-products" data-en="Products">
+          <span class="material-symbols-outlined text-lg text-gold">inventory_2</span>
+          <span>منتجاتنا</span>
+        </a></li>
+        <li><a href="#contact" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-contact" data-en="Contact Us">
+          <span class="material-symbols-outlined text-lg text-gold">mail</span>
+          <span>اتصل بنا</span>
+        </a></li>
+      </ul>
+      <div class="border-t [border-color:var(--border)] p-4 shrink-0">
+        <div class="flex items-center gap-3">
+          <button onclick="toggleLang()" class="flex-1 px-3 py-2.5 text-label-md font-tajawal font-medium text-primary rounded-xl border [border-color:var(--border)] hover:[background:var(--bg-surface-low)] transition-colors text-center" data-i18n="lang-btn" data-en="العربية">English</button>
+          <button onclick="toggleDark()" class="flex items-center justify-center w-11 h-11 rounded-xl text-primary border [border-color:var(--border)] hover:[background:var(--bg-surface-low)] transition-colors" aria-label="التبديل بين الوضع الليلي والنهاري" data-i18n-aria="dark-aria" data-en="Toggle dark/light mode">
+            <span class="material-symbols-outlined text-2xl">dark_mode</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -271,8 +310,8 @@
   <!-- ==================== HERO ==================== -->
   <header id="home" class="relative w-full min-h-[500px] md:min-h-[80vh] flex items-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <div class="bg-cover bg-center w-full h-full opacity-60 dark:opacity-40" style="background-image: url('assets/img/hero-bg.jpg')" aria-hidden="true"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-cream via-cream/80 to-transparent dark:from-[#0a1025] dark:via-[#0a1025]/80 dark:to-transparent" aria-hidden="true"></div>
+      <div class="bg-cover bg-center w-full h-full opacity-50 dark:opacity-30" style="background-image: url('assets/img/hero-bg.jpg')" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-l from-[#FFF9F0] via-[#FFF9F0]/85 to-transparent dark:from-[#0f172a] dark:via-[#0f172a]/80 dark:to-transparent" aria-hidden="true"></div>
     </div>
 
     <div class="relative z-10 max-w-container-max mx-auto px-4 sm:px-gutter py-24 md:py-32 w-full">
@@ -543,9 +582,8 @@
     }
 
     function updateDarkIcons(isDark) {
-      const icons = document.querySelectorAll('#dark-toggle-desktop .material-symbols-outlined, #mobile-menu .dark-toggle-icon .material-symbols-outlined');
       const icon = isDark ? 'light_mode' : 'dark_mode';
-      document.querySelectorAll('#dark-toggle-desktop .material-symbols-outlined, #mobile-menu li:last-child .material-symbols-outlined').forEach(el => {
+      document.querySelectorAll('#dark-toggle-desktop .material-symbols-outlined, #mobile-menu button:last-child .material-symbols-outlined').forEach(el => {
         el.textContent = icon;
       });
     }
