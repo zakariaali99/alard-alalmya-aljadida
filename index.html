@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شركة الأرض العالمية الجديدة | استيراد وتصدير المواد الغذائية</title>
+  <meta name="description" content="شركة الأرض العالمية الجديدة - رائدة في استيراد وتصدير المواد الغذائية: البقوليات، المكسرات، المعلبات، والمواشي. جودة عالمية من مصراتة إلى العالم.">
+
+  <!-- Google Fonts: Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00236F',
+            'primary-dark': '#00164E',
+            'primary-container': '#1E3A8A',
+            secondary: '#5D4037',
+            gold: '#C5A028',
+            'gold-light': '#E9C349',
+            cream: '#FDFBF7',
+            'sky-tint': '#EBF1FF',
+            ink: '#181C20',
+            'ink-soft': '#444651',
+            'ink-muted': '#757682',
+          },
+          fontFamily: {
+            tajawal: ['Tajawal', 'sans-serif'],
+          },
+          fontSize: {
+            'display': ['48px', { lineHeight: '60px', fontWeight: '800' }],
+            'display-mobile': ['36px', { lineHeight: '44px', fontWeight: '800' }],
+            'headline-lg': ['32px', { lineHeight: '40px', fontWeight: '700' }],
+            'headline-md': ['24px', { lineHeight: '32px', fontWeight: '700' }],
+            'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }],
+            'body-md': ['16px', { lineHeight: '24px', fontWeight: '400' }],
+            'label-md': ['14px', { lineHeight: '20px', letterSpacing: '0.01em', fontWeight: '500' }],
+            'label-sm': ['12px', { lineHeight: '16px', fontWeight: '600' }],
+          },
+          maxWidth: {
+            'container-max': '1280px',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #FDFBF7;
+      color: #181C20;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* Mobile menu animation */
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.25s ease;
+      opacity: 0;
+    }
+    #menu-toggle:checked ~ #mobile-menu {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    /* Fade-up keyframes */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up {
+      animation: fadeUp 0.7s ease-out forwards;
+    }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.35s; opacity: 0; }
+    .delay-4 { animation-delay: 0.5s; opacity: 0; }
+
+    /* Card shadows */
+    .card-shadow {
+      box-shadow: 0 4px 24px rgba(0, 35, 111, 0.04);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .card-shadow:hover {
+      box-shadow: 0 8px 32px rgba(0, 35, 111, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Focus styles */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #00236F;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* Gradient text */
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #C5A028, #E9C349);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Product image CSS-painted placeholders */
+    .img-pulses-nuts {
+      background:
+        radial-gradient(ellipse 140px 100px at 25% 30%, rgba(139, 105, 20, 0.55) 0%, transparent 100%),
+        radial-gradient(ellipse 120px 120px at 70% 25%, rgba(197, 160, 40, 0.45) 0%, transparent 100%),
+        radial-gradient(ellipse 100px 140px at 45% 70%, rgba(93, 64, 55, 0.45) 0%, transparent 100%),
+        radial-gradient(ellipse 80px 80px at 30% 65%, rgba(62, 122, 62, 0.35) 0%, transparent 100%),
+        radial-gradient(ellipse 110px 90px at 75% 60%, rgba(212, 160, 71, 0.45) 0%, transparent 100%),
+        radial-gradient(ellipse 70px 70px at 55% 45%, rgba(139, 105, 20, 0.25) 0%, transparent 100%),
+        linear-gradient(135deg, #FDFBF7 0%, #EBF1FF 40%, #E8DCC8 100%);
+    }
+    .img-canned {
+      background:
+        radial-gradient(ellipse 100px 120px at 30% 50%, rgba(160, 165, 175, 0.5) 0%, transparent 100%),
+        radial-gradient(ellipse 80px 100px at 60% 40%, rgba(180, 60, 50, 0.35) 0%, transparent 100%),
+        radial-gradient(ellipse 70px 80px at 70% 70%, rgba(200, 180, 100, 0.35) 0%, transparent 100%),
+        linear-gradient(135deg, #F0F2F5 0%, #E8ECF0 50%, #D5D8DD 100%);
+    }
+    .img-livestock {
+      background:
+        radial-gradient(ellipse 120px 100px at 40% 30%, rgba(80, 140, 70, 0.5) 0%, transparent 100%),
+        radial-gradient(ellipse 100px 80px at 60% 60%, rgba(160, 120, 60, 0.35) 0%, transparent 100%),
+        radial-gradient(ellipse 80px 100px at 25% 70%, rgba(197, 160, 40, 0.25) 0%, transparent 100%),
+        linear-gradient(135deg, #F0F7EE 0%, #E8F0E0 50%, #D5E0CD 100%);
+    }
+    .img-about {
+      background:
+        radial-gradient(ellipse 180px 140px at 30% 35%, rgba(139, 105, 20, 0.5) 0%, transparent 100%),
+        radial-gradient(ellipse 160px 160px at 65% 30%, rgba(197, 160, 40, 0.4) 0%, transparent 100%),
+        radial-gradient(ellipse 140px 180px at 40% 70%, rgba(93, 64, 55, 0.4) 0%, transparent 100%),
+        radial-gradient(ellipse 120px 120px at 70% 65%, rgba(62, 122, 62, 0.35) 0%, transparent 100%),
+        radial-gradient(ellipse 100px 100px at 25% 80%, rgba(212, 160, 71, 0.35) 0%, transparent 100%),
+        radial-gradient(ellipse 90px 90px at 55% 20%, rgba(180, 60, 50, 0.2) 0%, transparent 100%),
+        linear-gradient(135deg, #FDFBF7 0%, #EBF1FF 30%, #F0E8D5 100%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="bg-white/95 backdrop-blur-md border-b border-[#C5C5D3] sticky top-0 z-50" aria-label="القائمة الرئيسية">
+    <!-- Checkbox must be sibling of mobile-menu for CSS ~ selector -->
+    <input type="checkbox" id="menu-toggle" class="hidden peer">
+
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Brand (right in RTL) -->
+        <div class="flex items-center gap-3">
+          <a href="#home" class="flex items-center gap-3" aria-label="الصفحة الرئيسية">
+            <svg width="44" height="44" viewBox="0 0 44 44" class="shrink-0" aria-hidden="true">
+              <rect width="44" height="44" rx="10" fill="#00236F"/>
+              <text x="22" y="30" text-anchor="middle" fill="#C5A028" font-family="Tajawal, sans-serif" font-weight="800" font-size="18">أل</text>
+            </svg>
+            <span class="text-headline-md font-tajawal font-bold text-primary select-none">
+              <span class="hidden md:inline">شركة الأرض العالمية الجديدة</span>
+              <span class="md:hidden">الأرض العالمية</span>
+            </span>
+          </a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <ul class="hidden md:flex items-center gap-8">
+          <li><a href="#home" class="text-label-md font-tajawal font-bold text-primary border-b-2 border-primary pb-1 transition-colors">الرئيسية</a></li>
+          <li><a href="#about" class="text-label-md font-tajawal font-medium text-ink-soft hover:text-primary transition-colors pb-1">من نحن</a></li>
+          <li><a href="#products" class="text-label-md font-tajawal font-medium text-ink-soft hover:text-primary transition-colors pb-1">منتجاتنا</a></li>
+          <li><a href="#contact" class="text-label-md font-tajawal font-medium text-ink-soft hover:text-primary transition-colors pb-1">اتصل بنا</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-4">
+          <button class="hidden md:inline-flex text-label-md font-tajawal font-medium text-primary hover:text-primary/70 transition-colors" aria-label="التبديل إلى اللغة الإنجليزية">English</button>
+          <a href="#contact" class="hidden md:inline-flex bg-primary text-white px-6 py-2.5 rounded-lg text-label-md font-tajawal font-bold hover:bg-primary/90 transition-all shadow-sm hover:shadow-md">طلب عرض سعر</a>
+
+          <!-- Hamburger Toggle (label only, input is above in nav) -->
+          <label for="menu-toggle" class="md:hidden flex items-center cursor-pointer p-1 text-primary" aria-label="فتح القائمة">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu (sibling of checkbox in nav) -->
+    <div id="mobile-menu" class="md:hidden border-t border-[#C5C5D3]/50">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <ul class="flex flex-col gap-1 py-4">
+          <li><a href="#home" onclick="document.getElementById('menu-toggle').checked=false" class="block px-2 py-2.5 text-label-md font-tajawal font-bold text-primary rounded-lg hover:bg-sky-tint/50 transition-colors">الرئيسية</a></li>
+          <li><a href="#about" onclick="document.getElementById('menu-toggle').checked=false" class="block px-2 py-2.5 text-label-md font-tajawal font-medium text-ink-soft rounded-lg hover:bg-sky-tint/50 transition-colors">من نحن</a></li>
+          <li><a href="#products" onclick="document.getElementById('menu-toggle').checked=false" class="block px-2 py-2.5 text-label-md font-tajawal font-medium text-ink-soft rounded-lg hover:bg-sky-tint/50 transition-colors">منتجاتنا</a></li>
+          <li><a href="#contact" onclick="document.getElementById('menu-toggle').checked=false" class="block px-2 py-2.5 text-label-md font-tajawal font-medium text-ink-soft rounded-lg hover:bg-sky-tint/50 transition-colors">اتصل بنا</a></li>
+          <li class="border-t border-[#C5C5D3]/30 pt-3 mt-1">
+            <a href="#contact" onclick="document.getElementById('menu-toggle').checked=false" class="block w-full text-center bg-primary text-white px-6 py-3 rounded-lg text-label-md font-tajawal font-bold hover:bg-primary/90 transition-colors">طلب عرض سعر</a>
+          </li>
+          <li><button class="w-full text-center px-2 py-2.5 text-label-md font-tajawal font-medium text-primary" aria-label="التبديل إلى اللغة الإنجليزية">English</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ==================== HERO ==================== -->
+  <header id="home" class="relative min-h-[600px] md:min-h-[80vh] flex items-center overflow-hidden bg-cream">
+    <!-- Background: dot pattern overlay -->
+    <div class="absolute inset-0 opacity-[0.035]" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300236F' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;); background-size: 60px 60px;" aria-hidden="true"></div>
+    <!-- Ambient light washes -->
+    <div class="absolute inset-0" aria-hidden="true">
+      <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary opacity-[0.04] blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-gold opacity-[0.04] blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/3 w-[400px] h-[400px] rounded-full bg-secondary opacity-[0.03] blur-3xl"></div>
+    </div>
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-cream via-cream/90 to-sky-tint/60" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-container-max mx-auto px-gutter py-20 md:py-32 w-full">
+      <div class="max-w-3xl text-right">
+        <span class="inline-block text-label-md font-tajawal font-bold text-gold tracking-[0.15em] mb-4 animate-fade-up delay-1">الريادة في تجارة المواد الغذائية</span>
+        <h1 class="text-display-mobile md:text-display font-tajawal text-primary leading-tight mb-6 animate-fade-up delay-2">شركة الأرض العالمية الجديدة:<br><span class="text-gradient-gold">جودة عالمية</span> في استيراد<br class="hidden md:inline"> وتصدير المواد الغذائية</h1>
+        <p class="text-body-lg md:text-body-lg font-tajawal text-ink-soft max-w-2xl mb-8 leading-relaxed animate-fade-up delay-3">نحن رواد في توفير أجود أنواع البقوليات، المكسرات، المعلبات، والمواشي للأسواق العالمية والمحلية، مع التزام راسخ بالجودة والموثوقية.</p>
+        <div class="flex flex-wrap gap-4 animate-fade-up delay-4">
+          <a href="#products" class="inline-flex bg-primary text-white px-8 py-3.5 rounded-lg text-label-md font-tajawal font-bold hover:bg-primary/90 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">تصفّح منتجاتنا</a>
+          <a href="#contact" class="inline-flex border-2 border-secondary text-secondary px-8 py-3.5 rounded-lg text-label-md font-tajawal font-bold hover:bg-secondary/5 transition-all">تواصل معنا</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" class="py-16 md:py-24 bg-white" aria-labelledby="about-title">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+        <!-- Image Panel -->
+        <div class="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,35,111,0.04)] border border-[#C5C5D3]/20 order-2 md:order-1">
+          <div class="img-about w-full h-[320px] md:h-[420px]"></div>
+          <div class="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl" aria-hidden="true"></div>
+        </div>
+
+        <!-- Text -->
+        <div class="text-right order-1 md:order-2">
+          <h2 id="about-title" class="text-headline-lg font-tajawal text-primary mb-5">من قلب مصراتة إلى العالم</h2>
+          <p class="text-body-md font-tajawal text-ink-soft mb-6 leading-relaxed">تتخذ شركة الأرض العالمية الجديدة من مصراتة مقراً استراتيجياً لها، حيث تنطلق عملياتنا التجارية لتغطي الأسواق المحلية وتصل إلى شركائنا حول العالم. نحن نفخر بشبكة لوجستية متطورة تضمن وصول منتجاتنا بأعلى معايير الجودة وفي الوقت المحدد.</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2.5 text-body-md font-tajawal text-ink">
+              <span class="material-symbols-outlined text-gold shrink-0 text-xl" aria-hidden="true">check_circle</span>
+              خبرة واسعة في الأسواق العالمية
+            </li>
+            <li class="flex items-center gap-2.5 text-body-md font-tajawal text-ink">
+              <span class="material-symbols-outlined text-gold shrink-0 text-xl" aria-hidden="true">check_circle</span>
+              معايير جودة صارمة للمنتجات الغذائية
+            </li>
+            <li class="flex items-center gap-2.5 text-body-md font-tajawal text-ink">
+              <span class="material-symbols-outlined text-gold shrink-0 text-xl" aria-hidden="true">check_circle</span>
+              شراكات استراتيجية موثوقة
+            </li>
+          </ul>
+          <a href="#products" class="inline-flex items-center gap-1.5 text-label-md font-tajawal font-bold text-secondary hover:text-gold transition-colors group">
+            اقرأ المزيد عنا
+            <span class="material-symbols-outlined text-lg transition-transform group-hover:-translate-x-1" aria-hidden="true">arrow_back</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== PRODUCTS ==================== -->
+  <section id="products" class="py-16 md:py-24 bg-[#F1F4F9]" aria-labelledby="products-title">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 id="products-title" class="text-headline-lg font-tajawal text-primary mb-3">قطاعات الأعمال</h2>
+        <p class="text-body-lg font-tajawal text-ink-soft max-w-2xl mx-auto">تشكيلة متنوعة من المنتجات الغذائية الأساسية، مختارة بعناية لتلبية احتياجات عملائنا.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Pulses & Nuts (featured) -->
+        <article class="md:col-span-8 group relative bg-white rounded-2xl overflow-hidden card-shadow border border-[#C5C5D3]/20 flex flex-col" aria-label="البقوليات والمكسرات">
+          <div class="img-pulses-nuts h-[300px] md:h-[420px] w-full relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" aria-hidden="true"></div>
+          </div>
+          <div class="absolute bottom-0 w-full p-6 md:p-8 text-right">
+            <h3 class="text-headline-lg font-tajawal text-white mb-2 drop-shadow-md">البقوليات والمكسرات</h3>
+            <p class="text-body-md font-tajawal text-white/90 mb-4 max-w-lg drop-shadow">نستورد أجود أنواع البقوليات والمكسرات من أفضل المزارع العالمية، مع ضمان النضارة والجودة العالية.</p>
+            <a href="#contact" class="inline-flex items-center gap-1.5 text-label-md font-tajawal font-bold text-gold-light hover:text-white transition-colors group/link">
+              عرض التفاصيل
+              <span class="material-symbols-outlined text-lg transition-transform group-hover/link:-translate-x-1" aria-hidden="true">arrow_back</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Side Column -->
+        <div class="md:col-span-4 flex flex-col gap-6">
+
+          <!-- Canned Goods -->
+          <article class="flex-1 group bg-white rounded-2xl overflow-hidden card-shadow border border-[#C5C5D3]/20" aria-label="المعلبات">
+            <div class="img-canned h-44 md:h-48 w-full relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" aria-hidden="true"></div>
+            </div>
+            <div class="p-5 text-right">
+              <h3 class="text-headline-md font-tajawal text-primary mb-1.5">المعلبات</h3>
+              <p class="text-body-md font-tajawal text-ink-soft mb-3 line-clamp-2">تشكيلة واسعة من الأغذية المعلبة الموثوقة.</p>
+              <a href="#contact" class="inline-flex items-center gap-1.5 text-label-md font-tajawal font-bold text-secondary hover:text-gold transition-colors group/link">
+                التفاصيل
+                <span class="material-symbols-outlined text-lg transition-transform group-hover/link:-translate-x-1" aria-hidden="true">arrow_back</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Livestock -->
+          <article class="flex-1 group bg-white rounded-2xl overflow-hidden card-shadow border border-[#C5C5D3]/20" aria-label="المواشي">
+            <div class="img-livestock h-44 md:h-48 w-full relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" aria-hidden="true"></div>
+            </div>
+            <div class="p-5 text-right">
+              <h3 class="text-headline-md font-tajawal text-primary mb-1.5">المواشي</h3>
+              <p class="text-body-md font-tajawal text-ink-soft mb-3 line-clamp-2">استيراد مواشي وفق أعلى المعايير الصحية.</p>
+              <a href="#contact" class="inline-flex items-center gap-1.5 text-label-md font-tajawal font-bold text-secondary hover:text-gold transition-colors group/link">
+                التفاصيل
+                <span class="material-symbols-outlined text-lg transition-transform group-hover/link:-translate-x-1" aria-hidden="true">arrow_back</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" class="py-16 md:py-24 bg-cream relative overflow-hidden" aria-labelledby="contact-title">
+    <div class="absolute inset-0 bg-primary/[0.03]" aria-hidden="true"></div>
+
+    <div class="max-w-container-max mx-auto px-gutter relative z-10">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-[0_8px_32px_rgba(0,35,111,0.06)] border border-[#C5C5D3]/20">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center">
+
+          <!-- Contact Info -->
+          <div class="md:col-span-3 text-right">
+            <h2 id="contact-title" class="text-headline-lg font-tajawal text-primary mb-2">تفضل بزيارتنا</h2>
+            <p class="text-body-lg font-tajawal text-ink-soft mb-6 flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary shrink-0" aria-hidden="true">location_on</span>
+              مصراتة، عمارات الجامع العالي
+            </p>
+            <p class="text-body-md font-tajawal text-ink-soft mb-8">نسعد باستقبالكم في مقرنا الرئيسي لمناقشة فرص التعاون التجاري وتلبية احتياجاتكم.</p>
+
+            <div class="space-y-5">
+              <!-- Phones -->
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-gold shrink-0 text-2xl" aria-hidden="true">call</span>
+                <div class="flex flex-col gap-1">
+                  <a href="tel:+218912222770" dir="ltr" class="text-body-md font-tajawal text-ink hover:text-primary transition-colors">+218 91 222 27 70</a>
+                  <a href="tel:+21892222770" dir="ltr" class="text-body-md font-tajawal text-ink hover:text-primary transition-colors">+218 92 222 27 70</a>
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-gold shrink-0 text-2xl" aria-hidden="true">mail</span>
+                <a href="mailto:info@alard-alalamya-aljadida.ly" dir="ltr" class="text-body-md font-tajawal text-ink hover:text-primary transition-colors">info@alard-alalamya-aljadida.ly</a>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <a href="#" class="inline-flex bg-primary text-white px-8 py-3.5 rounded-lg text-label-md font-tajawal font-bold hover:bg-primary/90 transition-all shadow-md hover:shadow-lg">طلب عرض سعر</a>
+            </div>
+          </div>
+
+          <!-- Map Illustration -->
+          <div class="md:col-span-2">
+            <div class="rounded-xl overflow-hidden shadow-sm border border-[#C5C5D3]/30 bg-sky-tint/50">
+              <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto" role="img" aria-label="خريطة توضيحية لموقع مصراتة">
+                <!-- Background -->
+                <rect width="400" height="300" rx="12" fill="#EBF1FF"/>
+
+                <!-- Grid dots -->
+                <circle cx="80" cy="100" r="2.5" fill="#00236F" fill-opacity="0.1"/>
+                <circle cx="320" cy="80" r="2.5" fill="#00236F" fill-opacity="0.1"/>
+                <circle cx="110" cy="210" r="2.5" fill="#00236F" fill-opacity="0.1"/>
+                <circle cx="300" cy="200" r="2.5" fill="#00236F" fill-opacity="0.1"/>
+                <circle cx="200" cy="50" r="2.5" fill="#00236F" fill-opacity="0.1"/>
+
+                <!-- Abstract coastline / routes -->
+                <path d="M40 170 Q120 150 160 190 Q200 220 260 180 Q300 150 360 160" stroke="#C5C5D3" stroke-width="2" stroke-opacity="0.5" fill="none"/>
+                <path d="M200 300 Q185 220 200 180 Q215 140 200 100" stroke="#C5C5D3" stroke-width="1.5" stroke-opacity="0.3" fill="none"/>
+
+                <!-- Trade route dotted line -->
+                <path d="M80 100 Q160 60 200 90 Q240 120 320 80" stroke="#00236F" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.15" fill="none"/>
+                <path d="M110 210 Q160 190 200 180 Q240 170 300 200" stroke="#00236F" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.15" fill="none"/>
+
+                <!-- Pin layers -->
+                <circle cx="200" cy="150" r="28" fill="#C5A028" fill-opacity="0.1"/>
+                <circle cx="200" cy="150" r="16" fill="#C5A028" fill-opacity="0.2"/>
+                <circle cx="200" cy="150" r="7" fill="#C5A028"/>
+                <ellipse cx="200" cy="175" rx="12" ry="3" fill="#00236F" fill-opacity="0.06"/>
+
+                <!-- Label -->
+                <text x="200" y="228" text-anchor="middle" fill="#00236F" font-family="Tajawal, sans-serif" font-size="13" font-weight="700">مصراتة</text>
+                <text x="200" y="246" text-anchor="middle" fill="#444651" font-family="Tajawal, sans-serif" font-size="10" font-weight="500">عمارات الجامع العالي</text>
+
+                <!-- Compass -->
+                <circle cx="360" cy="40" r="18" fill="white" fill-opacity="0.6" stroke="#C5C5D3" stroke-width="0.5"/>
+                <text x="367" y="35" text-anchor="middle" fill="#00236F" font-size="10" font-weight="bold">ش</text>
+                <text x="360" y="52" text-anchor="middle" fill="#444651" font-size="7">شمال</text>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-primary text-white" aria-label="تذييل الصفحة">
+    <div class="max-w-container-max mx-auto px-gutter py-14 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 text-right">
+
+        <!-- Brand -->
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-4">
+            <svg width="44" height="44" viewBox="0 0 44 44" class="shrink-0" aria-hidden="true">
+              <rect width="44" height="44" rx="10" fill="#C5A028"/>
+              <text x="22" y="30" text-anchor="middle" fill="#00236F" font-family="Tajawal, sans-serif" font-weight="800" font-size="18">أل</text>
+            </svg>
+            <span class="text-headline-md font-tajawal font-bold">شركة الأرض العالمية الجديدة</span>
+          </div>
+          <p class="text-body-md font-tajawal text-white/70 leading-relaxed">جودة عالمية في استيراد وتصدير المواد الغذائية. نفخر بتقديم الأفضل للسوق المحلي والعالمي.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-headline-md font-tajawal font-bold text-gold-light mb-5">روابط سريعة</h3>
+          <ul class="space-y-3">
+            <li><a href="#home" class="text-body-md font-tajawal text-white/80 hover:text-gold-light transition-colors">الرئيسية</a></li>
+            <li><a href="#about" class="text-body-md font-tajawal text-white/80 hover:text-gold-light transition-colors">من نحن</a></li>
+            <li><a href="#products" class="text-body-md font-tajawal text-white/80 hover:text-gold-light transition-colors">منتجاتنا</a></li>
+            <li><a href="#contact" class="text-body-md font-tajawal text-white/80 hover:text-gold-light transition-colors">اتصل بنا</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="md:col-span-2">
+          <h3 class="text-headline-md font-tajawal font-bold text-gold-light mb-5">اتصل بنا</h3>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3 text-body-md font-tajawal text-white/80">
+              <span class="material-symbols-outlined text-gold shrink-0" aria-hidden="true">location_on</span>
+              مصراتة، عمارات الجامع العالي
+            </li>
+            <li class="flex items-center gap-3 text-body-md font-tajawal text-white/80">
+              <span class="material-symbols-outlined text-gold shrink-0" aria-hidden="true">call</span>
+              <div class="flex flex-col gap-1">
+                <a href="tel:+218912222770" dir="ltr" class="hover:text-gold-light transition-colors">+218 91 222 27 70</a>
+                <a href="tel:+21892222770" dir="ltr" class="hover:text-gold-light transition-colors">+218 92 222 27 70</a>
+              </div>
+            </li>
+            <li class="flex items-center gap-3 text-body-md font-tawajal text-white/80">
+              <span class="material-symbols-outlined text-gold shrink-0" aria-hidden="true">mail</span>
+              <a href="mailto:info@alard-alalamya-aljadida.ly" dir="ltr" class="hover:text-gold-light transition-colors">info@alard-alalamya-aljadida.ly</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-white/15">
+      <div class="max-w-container-max mx-auto px-gutter py-5 text-center">
+        <p class="text-label-md font-tajawal text-white/60">&copy; 2024 شركة الأرض العالمية الجديدة. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
