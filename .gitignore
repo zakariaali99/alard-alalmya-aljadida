@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Secrets / env
+.env
+.env.local
+.env.*.local
+secrets.json
+
+# Python (backend will be added later)
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Node (frontend will be added later)
+node_modules/
+dist/
+.vite/
+
+# Mobile (Flutter will be added later)
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Misc
+*.log
+.cache/
