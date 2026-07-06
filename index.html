@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title data-i18n="page-title" data-en="Al-Ard Al-Alamiya Al-Jadida | Food Import & Export">شركة الأرض العالمية الجديدة | استيراد وتصدير المواد الغذائية</title>
-  <meta name="description" data-i18n="page-desc" data-en="Al-Ard Al-Alamiya Al-Jadida - Global leader in food import and export: pulses, nuts, canned goods, and livestock. Quality from Misrata to the world." content="شركة الأرض العالمية الجديدة - رائدة في استيراد وتصدير المواد الغذائية: البقوليات، المكسرات، المعلبات، والمواشي. جودة عالمية من مصراتة إلى العالم.">
+  <title data-i18n="page-title" data-en="al-ard al-alamya al-jadida | Food Import & Export">شركة الأرض العالمية الجديدة | استيراد وتصدير المواد الغذائية</title>
+  <meta name="description" data-i18n="page-desc" data-en="al-ard al-alamya al-jadida - Global leader in food import and export: pulses, nuts, canned goods, and livestock. Quality from Misrata to the world." content="شركة الأرض العالمية الجديدة - رائدة في استيراد وتصدير المواد الغذائية: البقوليات، المكسرات، المعلبات، والمواشي. جودة عالمية من مصراتة إلى العالم.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/img/logo.png">
-  <link rel="shortcut icon" type="image/png" href="assets/img/logo.png">
-  <link rel="apple-touch-icon" href="assets/img/logo.png">
+  <link rel="icon" type="image/png" href="assets/img/logo.png?v=3">
+  <link rel="shortcut icon" type="image/png" href="assets/img/logo.png?v=3">
+  <link rel="apple-touch-icon" href="assets/img/logo.png?v=3">
   <meta name="theme-color" content="#00236F">
 
   <!-- Google Fonts: Tajawal -->
@@ -158,6 +158,12 @@
       opacity: 1;
       pointer-events: auto;
     }
+    [dir="rtl"] .sidebar-backdrop { right: 300px; }
+    [dir="ltr"] .sidebar-backdrop { left: 300px; }
+    @media (max-width: 359px) {
+      [dir="rtl"] .sidebar-backdrop { right: 85vw; }
+      [dir="ltr"] .sidebar-backdrop { left: 85vw; }
+    }
 
     /* Animations */
     @keyframes fadeUp {
@@ -217,6 +223,15 @@
     html.dark .img-overlay {
       background: rgba(4, 10, 20, 0.24);
     }
+    html.dark .hero-contact-button {
+      border-color: #caa33b;
+      color: #f4d77b;
+      background: rgba(202, 163, 59, 0.08);
+    }
+    html.dark .hero-contact-button:hover {
+      background: rgba(202, 163, 59, 0.16);
+      color: #ffe8a3;
+    }
 
     /* Section bg variables */
     .bg-page { background-color: var(--bg-page); }
@@ -240,10 +255,10 @@
         <!-- Brand -->
         <div class="flex items-center gap-2 sm:gap-3">
           <a href="#home" class="flex items-center gap-2 sm:gap-3" aria-label="الصفحة الرئيسية" data-i18n-aria="nav-home-aria" data-en="Home page">
-            <img src="assets/img/logo.png" alt="شركة الأرض العالمية الجديدة Logo" class="h-9 sm:h-11 w-auto object-contain" data-i18n-alt="nav-logo-alt" data-en="Al-Ard Al-Alamiya Al-Jadida Logo">
+            <img src="assets/img/logo.png" alt="شركة الأرض العالمية الجديدة Logo" class="h-9 sm:h-11 w-auto object-contain" data-i18n-alt="nav-logo-alt" data-en="al-ard al-alamya al-jadida Logo">
             <span class="text-headline-md font-tajawal font-bold text-primary select-none">
-              <span class="hidden md:inline text-[18px] lg:text-headline-md" data-i18n="nav-brand" data-en="Al-Ard Al-Alamiya Al-Jadida">شركة الأرض العالمية الجديدة</span>
-              <span class="md:hidden text-[13px] sm:text-[15px] leading-tight" data-i18n="nav-brand" data-en="Al-Ard Al-Alamiya Al-Jadida">شركة الأرض العالمية الجديدة</span>
+              <span class="hidden md:inline text-[18px] lg:text-headline-md" data-i18n="nav-brand" data-en="al-ard al-alamya al-jadida">شركة الأرض العالمية الجديدة</span>
+              <span class="md:hidden text-[13px] sm:text-[15px] leading-tight" data-i18n="nav-brand" data-en="al-ard al-alamya al-jadida">شركة الأرض العالمية الجديدة</span>
             </span>
           </a>
         </div>
@@ -278,7 +293,7 @@
   </nav>
 
   <!-- Mobile Sidebar -->
-  <div class="sidebar-backdrop md:hidden"></div>
+  <div class="sidebar-backdrop md:hidden" aria-hidden="true" onclick="document.getElementById('menu-toggle').checked=false"></div>
   <div id="mobile-menu" class="md:hidden flex flex-col">
     <div class="flex items-center justify-between px-5 h-16 border-b [border-color:var(--border)] shrink-0">
       <span class="text-headline-md font-tajawal font-bold text-primary" data-i18n="nav-menu-title" data-en="Menu">القائمة</span>
@@ -326,14 +341,14 @@
       <div class="max-w-3xl text-start">
         <span class="inline-block text-label-md font-tajawal font-bold text-gold tracking-[0.15em] mb-4 animate-fade-up delay-1" data-i18n="hero-eyebrow" data-en="Leadership in Food Trade">الريادة في تجارة المواد الغذائية</span>
         <h1 class="text-[clamp(1.75rem,6vw,2.25rem)] md:text-display font-tajawal text-primary-var leading-tight mb-6 animate-fade-up delay-2">
-          <span data-i18n="hero-title-1" data-en="Al-Ard Al-Alamiya Al-Jadida:">شركة الأرض العالمية الجديدة:</span><br>
+          <span data-i18n="hero-title-1" data-en="al-ard al-alamya al-jadida:">شركة الأرض العالمية الجديدة:</span><br>
           <span class="text-gradient-gold" data-i18n="hero-title-2" data-en="Global Quality">جودة عالمية</span>
           <span data-i18n="hero-title-3" data-en="in Food Import &amp; Export">في استيراد وتصدير المواد الغذائية</span>
         </h1>
         <p class="text-body-lg font-tajawal [color:var(--text-soft)] max-w-2xl mb-8 leading-relaxed animate-fade-up delay-3" data-i18n="hero-sub" data-en="We are leaders in supplying the finest pulses, nuts, canned goods, and livestock to global and local markets, with an unwavering commitment to quality and reliability.">نحن رواد في توفير أجود أنواع البقوليات، المكسرات، المعلبات، والمواشي للأسواق العالمية والمحلية، مع التزام راسخ بالجودة والموثوقية.</p>
         <div class="flex flex-wrap gap-4 animate-fade-up delay-4">
           <a href="#products" class="inline-flex bg-primary text-white px-8 py-3.5 rounded-lg text-label-md font-tajawal font-bold hover:bg-primary/90 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5" data-i18n="hero-cta-1" data-en="Browse Products">تصفّح منتجاتنا</a>
-          <a href="#contact" class="inline-flex border-2 border-secondary text-secondary px-8 py-3.5 rounded-lg text-label-md font-tajawal font-bold hover:bg-secondary/5 transition-all" data-i18n="hero-cta-2" data-en="Contact Us">تواصل معنا</a>
+          <a href="#contact" class="hero-contact-button inline-flex border-2 border-secondary text-secondary px-8 py-3.5 rounded-lg text-label-md font-tajawal font-bold hover:bg-secondary/5 transition-all" data-i18n="hero-cta-2" data-en="Contact Us">تواصل معنا</a>
         </div>
       </div>
     </div>
@@ -354,7 +369,7 @@
         <!-- Text -->
         <div class="text-start order-1 md:order-2">
           <h2 id="about-title" class="text-headline-lg font-tajawal text-primary mb-5" data-i18n="about-title" data-en="From the Heart of Misrata to the World">من قلب مصراتة إلى العالم</h2>
-          <p class="text-body-md font-tajawal [color:var(--text-soft)] mb-6 leading-relaxed" data-i18n="about-text" data-en="Al-Ard Al-Alamiya Al-Jadida is headquartered in Misrata, a strategic hub from which our operations reach local markets and partners worldwide. We pride ourselves on an advanced logistics network that ensures our products arrive with the highest quality standards, on time, every time.">تتخذ شركة الأرض العالمية الجديدة من مصراتة مقراً استراتيجياً لها، حيث تنطلق عملياتنا التجارية لتغطي الأسواق المحلية وتصل إلى شركائنا حول العالم. نحن نفخر بشبكة لوجستية متطورة تضمن وصول منتجاتنا بأعلى معايير الجودة وفي الوقت المحدد.</p>
+          <p class="text-body-md font-tajawal [color:var(--text-soft)] mb-6 leading-relaxed" data-i18n="about-text" data-en="al-ard al-alamya al-jadida is headquartered in Misrata, a strategic hub from which our operations reach local markets and partners worldwide. We pride ourselves on an advanced logistics network that ensures our products arrive with the highest quality standards, on time, every time.">تتخذ شركة الأرض العالمية الجديدة من مصراتة مقراً استراتيجياً لها، حيث تنطلق عملياتنا التجارية لتغطي الأسواق المحلية وتصل إلى شركائنا حول العالم. نحن نفخر بشبكة لوجستية متطورة تضمن وصول منتجاتنا بأعلى معايير الجودة وفي الوقت المحدد.</p>
           <ul class="space-y-3 mb-8">
             <li class="flex items-center gap-2.5 text-body-md font-tajawal [color:var(--text-primary)]">
               <span class="material-symbols-outlined text-gold shrink-0 text-xl" aria-hidden="true">check_circle</span>
@@ -530,8 +545,8 @@
         <!-- Brand -->
         <div class="sm:col-span-2 md:col-span-1">
           <div class="flex items-center gap-3 mb-4">
-            <img src="assets/img/logo.png" alt="شركة الأرض العالمية الجديدة Logo" class="h-10 w-auto object-contain brightness-0 invert" data-i18n-alt="footer-logo-alt" data-en="Al-Ard Al-Alamiya Al-Jadida Logo">
-            <span class="text-headline-md font-tajawal font-bold text-[#f7f9ff]" data-i18n="footer-brand" data-en="Al-Ard Al-Alamiya Al-Jadida">شركة الأرض العالمية الجديدة</span>
+            <img src="assets/img/logo.png" alt="شركة الأرض العالمية الجديدة Logo" class="h-10 w-auto object-contain brightness-0 invert" data-i18n-alt="footer-logo-alt" data-en="al-ard al-alamya al-jadida Logo">
+            <span class="text-headline-md font-tajawal font-bold text-[#f7f9ff]" data-i18n="footer-brand" data-en="al-ard al-alamya al-jadida">شركة الأرض العالمية الجديدة</span>
           </div>
           <p class="text-body-md font-tajawal text-[#e0e3e8]/70 leading-relaxed" data-i18n="footer-tagline" data-en="Global quality in food import and export. We pride ourselves on delivering the best to local and international markets.">جودة عالمية في استيراد وتصدير المواد الغذائية. نفخر بتقديم الأفضل للسوق المحلي والعالمي.</p>
         </div>
@@ -574,7 +589,7 @@
 
     <div class="border-t border-[#e0e3e8]/20">
       <div class="max-w-container-max mx-auto px-4 sm:px-gutter py-5 text-center">
-        <p class="text-label-md font-tajawal text-[#e0e3e8]/60" data-i18n="footer-copyright" data-en="&copy; 2024 Al-Ard Al-Alamiya Al-Jadida. All rights reserved.">&copy; 2024 شركة الأرض العالمية الجديدة. جميع الحقوق محفوظة.</p>
+        <p class="text-label-md font-tajawal text-[#e0e3e8]/60" data-i18n="footer-copyright" data-en="&copy; 2024 al-ard al-alamya al-jadida. All rights reserved.">&copy; 2024 شركة الأرض العالمية الجديدة. جميع الحقوق محفوظة.</p>
       </div>
     </div>
   </footer>
