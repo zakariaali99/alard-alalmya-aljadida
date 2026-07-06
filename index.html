@@ -88,17 +88,17 @@
       --shadow-hover: rgba(0, 35, 111, 0.08);
     }
     html.dark {
-      --bg-page: #0f172a;
-      --bg-surface: #1e293b;
-      --bg-surface-low: #334155;
-      --bg-surface-high: #475569;
+      --bg-page: #0b1220;
+      --bg-surface: #172033;
+      --bg-surface-low: #22304a;
+      --bg-surface-high: #31415e;
       --text-primary: #f8fafc;
-      --text-soft: #cbd5e1;
-      --text-muted: #94a3b8;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-light: rgba(255, 255, 255, 0.04);
-      --shadow-color: rgba(0, 0, 0, 0.4);
-      --shadow-hover: rgba(0, 0, 0, 0.6);
+      --text-soft: #e2e8f0;
+      --text-muted: #cbd5e1;
+      --border: rgba(255, 255, 255, 0.12);
+      --border-light: rgba(255, 255, 255, 0.08);
+      --shadow-color: rgba(0, 0, 0, 0.45);
+      --shadow-hover: rgba(0, 0, 0, 0.65);
     }
 
     body {
@@ -106,6 +106,13 @@
       background-color: var(--bg-page);
       color: var(--text-primary);
       overflow-x: hidden;
+    }
+
+    html.dark .text-primary {
+      color: var(--text-primary) !important;
+    }
+    html.dark .hover\:text-primary:hover {
+      color: var(--text-primary) !important;
     }
 
     .material-symbols-outlined {
@@ -127,9 +134,9 @@
       bottom: 0;
       width: 300px;
       max-width: 85vw;
-      z-index: 50;
+      z-index: 90;
       background: var(--bg-surface);
-      box-shadow: -8px 0 32px rgba(0,0,0,0.15);
+      box-shadow: -16px 0 40px rgba(0,0,0,0.3);
       transition: transform 0.3s ease-in-out;
       overflow-y: auto;
     }
@@ -142,7 +149,7 @@
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.5);
-      z-index: 49;
+      z-index: 80;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -208,7 +215,7 @@
       transition: background 0.3s ease;
     }
     html.dark .img-overlay {
-      background: rgba(0, 0, 0, 0.15);
+      background: rgba(4, 10, 20, 0.24);
     }
 
     /* Section bg variables */
@@ -252,7 +259,7 @@
         <!-- Actions -->
         <div class="flex items-center gap-2 sm:gap-4">
           <!-- Language Toggle -->
-          <button id="lang-toggle" onclick="toggleLang()" class="text-label-md font-tajawal font-medium text-primary hover:text-primary/70 transition-colors whitespace-nowrap" data-i18n="lang-btn" data-en="العربية">English</button>
+          <button id="lang-toggle" onclick="toggleLang()" class="hidden md:inline-flex text-label-md font-tajawal font-medium text-primary hover:text-primary/70 transition-colors whitespace-nowrap" data-i18n="lang-btn" data-en="العربية">English</button>
 
           <!-- Dark Mode Toggle (desktop) -->
           <button id="dark-toggle-desktop" onclick="toggleDark()" class="hidden md:inline-flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:[background:var(--bg-surface-low)] transition-colors" aria-label="التبديل بين الوضع الليلي والنهاري" data-i18n-aria="dark-aria" data-en="Toggle dark/light mode">
@@ -317,7 +324,7 @@
     <div class="relative z-10 max-w-container-max mx-auto px-4 sm:px-gutter py-24 md:py-32 w-full">
       <div class="max-w-3xl text-start">
         <span class="inline-block text-label-md font-tajawal font-bold text-gold tracking-[0.15em] mb-4 animate-fade-up delay-1" data-i18n="hero-eyebrow" data-en="Leadership in Food Trade">الريادة في تجارة المواد الغذائية</span>
-        <h1 class="text-[clamp(1.75rem,6vw,2.25rem)] md:text-display font-tajawal text-primary leading-tight mb-6 animate-fade-up delay-2">
+        <h1 class="text-[clamp(1.75rem,6vw,2.25rem)] md:text-display font-tajawal text-primary-var leading-tight mb-6 animate-fade-up delay-2">
           <span data-i18n="hero-title-1" data-en="Al-Ard Al-Alamiya Al-Jadida:">شركة الأرض العالمية الجديدة:</span><br>
           <span class="text-gradient-gold" data-i18n="hero-title-2" data-en="Global Quality">جودة عالمية</span>
           <span data-i18n="hero-title-3" data-en="in Food Import &amp; Export">في استيراد وتصدير المواد الغذائية</span>
@@ -385,16 +392,18 @@
         <!-- Pulses & Nuts (featured) -->
         <article class="md:col-span-8 group relative [background:var(--bg-surface)] rounded-2xl overflow-hidden card-shadow border flex flex-col" aria-label="البقوليات والمكسرات">
           <div class="h-[300px] md:h-[400px] w-full relative overflow-hidden">
-            <img src="assets/img/pulses-nuts.jpg" alt="Assorted premium nuts and organic pulses" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-i18n-alt="pulses-alt" data-en="Assorted premium nuts and organic pulses" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" aria-hidden="true"></div>
+            <img src="assets/img/pulses-nuts.jpg" alt="Assorted premium nuts and organic pulses" class="w-full h-full object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105" data-i18n-alt="pulses-alt" data-en="Assorted premium nuts and organic pulses" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent" aria-hidden="true"></div>
           </div>
-          <div class="absolute bottom-0 w-full p-5 sm:p-6 md:p-8 text-start" style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)">
-            <h3 class="text-headline-lg font-tajawal text-white mb-2" data-i18n="product-pulses-title" data-en="Pulses &amp; Nuts">البقوليات والمكسرات</h3>
-            <p class="text-body-md font-tajawal text-white/95 mb-4 max-w-lg" data-i18n="product-pulses-desc" data-en="We import the finest pulses and nuts from the world's best farms, ensuring freshness and premium quality.">نستورد أجود أنواع البقوليات والمكسرات من أفضل المزارع العالمية، مع ضمان النضارة والجودة العالية.</p>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-label-md font-tajawal font-bold text-gold-light hover:text-white transition-colors group/link">
+          <div class="absolute bottom-0 w-full p-5 sm:p-6 md:p-8 text-start">
+            <div class="rounded-2xl bg-[#FFF9F0]/95 backdrop-blur-sm border border-black/5 p-4 sm:p-5 md:p-6 max-w-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <h3 class="text-headline-lg font-tajawal text-black mb-2" data-i18n="product-pulses-title" data-en="Pulses &amp; Nuts">البقوليات والمكسرات</h3>
+              <p class="text-body-md font-tajawal text-black/80 mb-4 max-w-lg" data-i18n="product-pulses-desc" data-en="We import the finest pulses and nuts from the world's best farms, ensuring freshness and premium quality.">نستورد أجود أنواع البقوليات والمكسرات من أفضل المزارع العالمية، مع ضمان النضارة والجودة العالية.</p>
+              <a href="#contact" class="inline-flex items-center gap-1.5 text-label-md font-tajawal font-bold text-secondary hover:text-gold transition-colors group/link">
               <span data-i18n="product-view" data-en="View Details">عرض التفاصيل</span>
               <span class="material-symbols-outlined text-lg transition-transform group-hover/link:-translate-x-1 dir-icon" aria-hidden="true">arrow_back</span>
-            </a>
+              </a>
+            </div>
           </div>
         </article>
 
