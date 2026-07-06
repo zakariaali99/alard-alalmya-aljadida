@@ -40,3 +40,7 @@ build/
 # Misc
 *.log
 .cache/
+
+# Testing / screenshots
+.playwright-mcp/
+screenshot-*.png
