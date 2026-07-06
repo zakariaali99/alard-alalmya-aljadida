@@ -230,10 +230,10 @@
 
 <body>
 
+  <input type="checkbox" id="menu-toggle" class="hidden">
+
   <!-- ==================== NAVBAR ==================== -->
   <nav class="[background:var(--bg-surface)]/95 backdrop-blur-md border-b [border-color:var(--border)] sticky top-0 z-50" aria-label="القائمة الرئيسية">
-    <input type="checkbox" id="menu-toggle" class="hidden peer">
-
     <div class="max-w-container-max mx-auto px-4 sm:px-gutter">
       <div class="nav-row h-16 md:h-20">
 
@@ -275,43 +275,44 @@
       </div>
     </div>
 
-    <!-- Mobile Sidebar -->
-    <div class="sidebar-backdrop md:hidden"></div>
-    <div id="mobile-menu" class="md:hidden flex flex-col">
-      <div class="flex items-center justify-between px-5 h-16 border-b [border-color:var(--border)] shrink-0">
-        <span class="text-headline-md font-tajawal font-bold text-primary" data-i18n="nav-menu-title" data-en="Menu">القائمة</span>
-        <label for="menu-toggle" class="cursor-pointer flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:[background:var(--bg-surface-low)] transition-colors" aria-label="إغلاق القائمة" data-i18n-aria="close-menu-aria" data-en="Close menu">
-          <span class="material-symbols-outlined text-2xl">close</span>
-        </label>
-      </div>
-      <ul class="flex flex-col gap-1 p-4 flex-1">
-        <li><a href="#home" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-bold text-primary rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-home" data-en="Home">
-          <span class="material-symbols-outlined text-lg text-gold">home</span>
-          <span>الرئيسية</span>
-        </a></li>
-        <li><a href="#about" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-about" data-en="About Us">
-          <span class="material-symbols-outlined text-lg text-gold">info</span>
-          <span>من نحن</span>
-        </a></li>
-        <li><a href="#products" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-products" data-en="Products">
-          <span class="material-symbols-outlined text-lg text-gold">inventory_2</span>
-          <span>منتجاتنا</span>
-        </a></li>
-        <li><a href="#contact" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-contact" data-en="Contact Us">
-          <span class="material-symbols-outlined text-lg text-gold">mail</span>
-          <span>اتصل بنا</span>
-        </a></li>
-      </ul>
-      <div class="border-t [border-color:var(--border)] p-4 shrink-0">
-        <div class="flex items-center gap-3">
-          <button onclick="toggleLang()" class="flex-1 px-3 py-2.5 text-label-md font-tajawal font-medium text-primary rounded-xl border [border-color:var(--border)] hover:[background:var(--bg-surface-low)] transition-colors text-center" data-i18n="lang-btn" data-en="العربية">English</button>
-          <button onclick="toggleDark()" class="flex items-center justify-center w-11 h-11 rounded-xl text-primary border [border-color:var(--border)] hover:[background:var(--bg-surface-low)] transition-colors" aria-label="التبديل بين الوضع الليلي والنهاري" data-i18n-aria="dark-aria" data-en="Toggle dark/light mode">
-            <span class="material-symbols-outlined text-2xl">dark_mode</span>
-          </button>
-        </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <div class="sidebar-backdrop md:hidden"></div>
+  <div id="mobile-menu" class="md:hidden flex flex-col">
+    <div class="flex items-center justify-between px-5 h-16 border-b [border-color:var(--border)] shrink-0">
+      <span class="text-headline-md font-tajawal font-bold text-primary" data-i18n="nav-menu-title" data-en="Menu">القائمة</span>
+      <label for="menu-toggle" class="cursor-pointer flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:[background:var(--bg-surface-low)] transition-colors" aria-label="إغلاق القائمة" data-i18n-aria="close-menu-aria" data-en="Close menu">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </label>
+    </div>
+    <ul class="flex flex-col gap-1 p-4 flex-1">
+      <li><a href="#home" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-bold text-primary rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-home" data-en="Home">
+        <span class="material-symbols-outlined text-lg text-gold">home</span>
+        <span>الرئيسية</span>
+      </a></li>
+      <li><a href="#about" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-about" data-en="About Us">
+        <span class="material-symbols-outlined text-lg text-gold">info</span>
+        <span>من نحن</span>
+      </a></li>
+      <li><a href="#products" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-products" data-en="Products">
+        <span class="material-symbols-outlined text-lg text-gold">inventory_2</span>
+        <span>منتجاتنا</span>
+      </a></li>
+      <li><a href="#contact" onclick="document.getElementById('menu-toggle').checked=false" class="flex items-center gap-3 px-3 py-3 text-label-md font-tajawal font-medium [color:var(--text-soft)] rounded-xl hover:[background:var(--bg-surface-low)] transition-colors" data-i18n="nav-contact" data-en="Contact Us">
+        <span class="material-symbols-outlined text-lg text-gold">mail</span>
+        <span>اتصل بنا</span>
+      </a></li>
+    </ul>
+    <div class="border-t [border-color:var(--border)] p-4 shrink-0">
+      <div class="flex items-center gap-3">
+        <button onclick="toggleLang()" class="flex-1 px-3 py-2.5 text-label-md font-tajawal font-medium text-primary rounded-xl border [border-color:var(--border)] hover:[background:var(--bg-surface-low)] transition-colors text-center" data-i18n="lang-btn" data-en="العربية">English</button>
+        <button onclick="toggleDark()" class="flex items-center justify-center w-11 h-11 rounded-xl text-primary border [border-color:var(--border)] hover:[background:var(--bg-surface-low)] transition-colors" aria-label="التبديل بين الوضع الليلي والنهاري" data-i18n-aria="dark-aria" data-en="Toggle dark/light mode">
+          <span class="material-symbols-outlined text-2xl">dark_mode</span>
+        </button>
       </div>
     </div>
-  </nav>
+  </div>
 
 
   <!-- ==================== HERO ==================== -->
